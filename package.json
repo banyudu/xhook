@@ -1,6 +1,6 @@
 {
-  "name": "xhook",
-  "version": "0.0.0-git-tag",
+  "name": "@banyudu/xhook",
+  "version": "1.6.1",
   "description": "Easily intercept and modify XHR request and response",
   "main": "lib/main.js",
   "module": "es/main.js",
@@ -8,8 +8,13 @@
     "start": "rollup -c -w",
     "build": "rollup -c",
     "test": "playwright test",
+    "prepublishOnly": "npm run build",
     "test:server": "http-server --port 8080",
     "prepare": "husky install"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",
