@@ -37,7 +37,7 @@ export const EventEmitter = function (nodeStyle) {
     const args = slice(arguments);
     const event = args.shift();
     if (!nodeStyle) {
-      args[0] = mergeObjects(args[0], fakeEvent(event));
+      args[0] = mergeObjects(args[0], fakeEvent(event), { target: this });
     }
     const legacylistener = emitter[`on${event}`];
     if (legacylistener) {
