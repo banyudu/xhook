@@ -8,6 +8,7 @@
     "start": "rollup -c -w",
     "build": "rollup -c",
     "test": "playwright test",
+    "postversion": "npm publish && git push && git push --tags",
     "prepublishOnly": "npm run build",
     "test:server": "http-server --port 8080",
     "prepare": "husky install"
